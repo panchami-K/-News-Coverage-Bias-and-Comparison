@@ -1,0 +1,42 @@
+# Core Data Science
+pandas>=1.3.0
+numpy>=1.21.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Machine Learning & NLP
+scikit-learn>=0.24.0
+joblib>=1.0.0
+tqdm>=4.60.0
+
+# Text & Language Processing
+spacy>=3.0.0
+nltk>=3.6.0
+langdetect>=1.0.9
+textblob>=0.17.1
+
+# Optional: For transformer-based summarization and embeddings
+sentence-transformers>=2.2.2
+transformers>=4.10.0
+
+# For LDA and topic modeling
+scipy>=1.7.0
+
+# For Polyglot (optional, advanced multilingual support)
+pyicu>=2.10
+polyglot>=16.7.4
+
+# For Plotly image export (optional, for saving as PNG/SVG)
+kaleido>=0.2.1
+
+# Logging (standard in Python, but listed for completeness)
+# logging
+
+# If you use Jupyter/Colab for interactive work
+ipython>=7.0.0
+
+# For type hints (Python 3.8+ usually has these)
+typing-extensions>=4.0.0

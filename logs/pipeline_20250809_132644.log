@@ -1,0 +1,45 @@
+2025-08-09 13:26:44,113 - INFO - === Starting News Analysis Pipeline ===
+2025-08-09 13:26:44,113 - INFO - Directory ensured: data\raw
+2025-08-09 13:26:44,113 - INFO - Directory ensured: data\processed
+2025-08-09 13:26:44,113 - INFO - Directory ensured: models
+2025-08-09 13:26:44,113 - INFO - Directory ensured: visuals
+2025-08-09 13:26:44,113 - INFO - Memory usage at startup: 494.46 MB
+2025-08-09 13:26:44,113 - INFO - === Starting Data Loading ===
+2025-08-09 13:26:45,087 - INFO - Connection 1 loading: DataFrame shape: (899, 19)
+2025-08-09 13:26:45,087 - INFO - Connection 1 loading: Columns: ['Article_ID', 'Headline', 'Body_Text', 'Summary', 'Publication_Date', 'Source_Name', 'Source_Country', 'Political_Leaning', 'Factual_Rating', 'Topic', 'Subtopic', 'Event_ID', 'Framing_Keywords', 'Sentiment', 'Perspective_Summary', 'Popularity_Score', 'Paywall', 'Author', 'Language']
+2025-08-09 13:26:45,165 - INFO - Connection 1 loading: DataFrame memory usage: 1.85 MB
+2025-08-09 13:26:45,171 - INFO - Connection 2 loading: DataFrame shape: (2216, 19)
+2025-08-09 13:26:45,172 - INFO - Connection 2 loading: Columns: ['Article_ID', 'Headline', 'Body_Text', 'Summary', 'Publication_Date', 'Source_Name', 'Source_Country', 'Political_Leaning', 'Factual_Rating', 'Topic', 'Subtopic', 'Event_ID', 'Framing_Keywords', 'Sentiment', 'Perspective_Summary', 'Popularity_Score', 'Paywall', 'Author', 'Language']
+2025-08-09 13:26:45,203 - INFO - Connection 2 loading: DataFrame memory usage: 2.97 MB
+2025-08-09 13:26:45,511 - INFO - Combined dataset: DataFrame shape: (3115, 19)
+2025-08-09 13:26:45,511 - INFO - Combined dataset: Columns: ['Article_ID', 'Headline', 'Body_Text', 'Summary', 'Publication_Date', 'Source_Name', 'Source_Country', 'Political_Leaning', 'Factual_Rating', 'Topic', 'Subtopic', 'Event_ID', 'Framing_Keywords', 'Sentiment', 'Perspective_Summary', 'Popularity_Score', 'Paywall', 'Author', 'Language']
+2025-08-09 13:26:45,528 - INFO - Combined dataset: DataFrame memory usage: 4.84 MB
+2025-08-09 13:26:45,528 - INFO - Memory usage after data loading: 478.00 MB
+2025-08-09 13:26:45,528 - INFO - === Starting Data Cleaning ===
+2025-08-09 13:26:46,042 - INFO - Cleaned data: DataFrame shape: (3067, 19)
+2025-08-09 13:26:46,042 - INFO - Cleaned data: Columns: ['article_id', 'headline', 'body_text', 'summary', 'publication_date', 'source_name', 'source_country', 'political_leaning', 'factual_rating', 'topic', 'subtopic', 'event_id', 'framing_keywords', 'sentiment', 'perspective_summary', 'popularity_score', 'paywall', 'author', 'language']
+2025-08-09 13:26:46,060 - INFO - Cleaned data: DataFrame memory usage: 4.65 MB
+2025-08-09 13:26:46,140 - INFO - Cleaned data saved to data\processed\cleaned_main_combined.csv
+2025-08-09 13:26:46,404 - INFO - Memory usage after data cleaning: 471.88 MB
+2025-08-09 13:26:46,404 - INFO - === Running Multilingual Text Preprocessing ===
+2025-08-09 13:26:46,877 - INFO - Processed data: DataFrame shape: (3067, 24)
+2025-08-09 13:26:46,878 - INFO - Processed data: Columns: ['article_id', 'headline', 'body_text', 'summary', 'publication_date', 'source_name', 'source_country', 'political_leaning', 'factual_rating', 'topic', 'subtopic', 'event_id', 'framing_keywords', 'sentiment', 'perspective_summary', 'popularity_score', 'paywall', 'author', 'language', 'detected_language', 'headline_clean', 'body_text_clean', 'headline_word_count', 'body_text_word_count']
+2025-08-09 13:26:46,904 - INFO - Processed data: DataFrame memory usage: 6.21 MB
+2025-08-09 13:26:47,030 - INFO - Processed data saved to data\processed\processed_main_combined.csv
+2025-08-09 13:26:47,327 - INFO - Memory usage after text preprocessing: 473.02 MB
+2025-08-09 13:26:47,327 - INFO - === Running Exploratory Data Analysis (EDA) ===
+2025-08-09 13:30:50,252 - INFO - EDA completed successfully
+2025-08-09 13:30:50,296 - INFO - Memory usage after EDA: 283.43 MB
+2025-08-09 13:30:50,296 - INFO - === Running Baseline Political Leaning Classification ===
+2025-08-09 13:30:53,218 - INFO - Model saved to models\political_classifier.pkl
+2025-08-09 13:30:53,229 - INFO - Memory usage after baseline classification: 221.52 MB
+2025-08-09 13:30:53,229 - INFO - === Starting Topic Clustering and Spectrum Analysis ===
+2025-08-09 13:30:53,229 - INFO - Preparing combined text column...
+2025-08-09 13:30:54,430 - INFO - Empty combined texts: 0/3067
+2025-08-09 13:30:54,502 - INFO - Using 3067 valid text entries
+2025-08-09 13:30:54,505 - INFO - Memory usage before topic clustering: 201.53 MB
+2025-08-09 13:30:54,506 - INFO - Attempting to import NewsSpectrumAnalyzer...
+2025-08-09 13:30:54,511 - INFO - Attempting to import NewsSpectrumAnalyzer (timeout: 60s)...
+2025-08-09 13:30:55,328 - INFO - NewsSpectrumAnalyzer imported successfully
+2025-08-09 13:30:55,332 - INFO - Prepared 3067 text documents for analysis
+2025-08-09 13:30:55,332 - INFO - Initializing NewsSpectrumAnalyzer...
